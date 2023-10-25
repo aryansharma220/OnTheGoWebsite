@@ -66,7 +66,7 @@ export default function SignUp() {
           <input
             type="email"
             placeholder="email"
-            className="mt-1 mb-2 h-12 w-full px-2 py-1 rounded focus-within:outline-red-300 bg-white opacity-40 text-black"
+            className="mt-1 mb-2 h-12 w-full px-2 py-1 rounded focus-within:outline-red-300 bg-white opacity-40 text-black lowercase"
             id="email"
             onChange={handleChange}
           />
