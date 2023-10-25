@@ -6,10 +6,10 @@ import SignUp from './Pages/SignUp'
 import Header from './components/Header'
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './Pages/Profile';
-import CreateListing from './pages/CreateListing';
-import UpdateListing from './pages/UpdateListing';
-import Listing from './pages/Listing';
-import Search from './pages/Search';
+import CreateListing from './Pages/CreateListing';
+import UpdateListing from './Pages/UpdateListing';
+import Listing from './Pages/Listing';
+import Search from './Pages/Search';
 
 const App = () => {
   return (
