@@ -24,15 +24,12 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='shadow-md w-full h-24 px-2 md:px-4 bg-black opacity-100'>
-      <div className='flex justify-between items-center max-w-7xl mx-auto p-3'>
+    <header className='shadow-md w-full h-auto md:h-24 px-2 md:px-4 bg-black opacity-100'>
+      <div className='flex flex-wrap justify-between items-center max-w-7xl mx-auto p-3'>
         <Link to='/'>
-          <img className="h-12 invert mt-3" src={logo} alt="OnTheGo"/>
+          <img className="h-12 md:h-16 invert mt-3" src={logo} alt="OnTheGo" />
         </Link>
-        <form
-          onSubmit={handleSubmit}
-          className='bg-slate-100 p-3 rounded-lg flex items-center'
-        >
+        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex items-center mt-3 md:mt-0'>
           <input
             type='text'
             placeholder='Search...'
@@ -44,17 +41,12 @@ export default function Header() {
             <FaSearch className='text-slate-600' />
           </button>
         </form>
-        <ul className='flex gap-4'>
+        <ul className='flex gap-4 mt-3 md:mt-0'>
           <Link to='/'>
-            <li className='hidden sm:inline  text-slate-300 font-bold  hover:underline hover:text-cyan-400'>
+            <li className='text-slate-300 font-bold hover:underline hover:text-cyan-400'>
               Home
             </li>
           </Link>
-          {/* <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
-              About
-            </li>
-          </Link> */}
           <Link to='/profile'>
             {currentUser ? (
               <img
@@ -63,7 +55,9 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className='hidden sm:inline  text-slate-300 font-bold  hover:underline hover:text-cyan-400'> Sign in</li>
+              <li className='text-slate-300 font-bold hover:underline hover:text-cyan-400'>
+                Sign in
+              </li>
             )}
           </Link>
         </ul>

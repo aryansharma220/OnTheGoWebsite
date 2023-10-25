@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation } from 'swiper/modules';
-// import SwiperCore from 'swiper';
-// import 'swiper/css/bundle';
+
 import ListingItem from '../components/ListingItem';
 import bgImg from '../assets/home.jpg'
 
@@ -11,7 +8,7 @@ export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
-  // SwiperCore.use([Navigation]);
+
   console.log(offerListings);
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -48,92 +45,29 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black">
-
-      <div className='bg-cover h-screen object-contain opacity-0.8'
-        style={{
-          backgroundImage: `url(${bgImg})`,
-        }}>
-        {/* top */}
-        <div className='relative top-0 h-full flex flex-col space-y-10  items-center bg-black opacity-90 xl:w-5/12 sm:w-3/4 -z-1'>
-          <h1 className='mt-32 text-white font-bold text-3xl lg:text-4xl'>
-            Find your next <span className='text-cyan-400'>perfect</span>
-            <br />
-            travel partner
-          </h1>
-          <div className='text-white text-xs sm:text-lg'>
-            {/* <br /> */}
-            OnTheGo is the best place to find your <br /> next perfect partner to travel with.
-          </div>
-          <Link
-            to={'/search'}
-            className='pt-4 text-lg sm:text-2xl text-cyan-400 font-extrabold hover:underline'
-          >
-            Click here to Search your Destination
-          </Link>
-        </div>
-
-        {/* swiper */}
-        {/* <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
-                }}
-                className='h-[500px]'
-                key={listing._id}
-              ></div>
-            </SwiperSlide>
-            ))}
-      </Swiper> */}
-
-        {/* listing results for offer, sale and rent */}
-
-        {/* <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
-        {offerListings && offerListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-            <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-            {offerListings.map((listing) => (
-              <ListingItem listing={listing} key={listing._id} />
-              ))}
-              </div>
-              </div>
-              )}
-              {rentListings && rentListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-            <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-            <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-            {rentListings.map((listing) => (
-              <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-            </div>
-        )}
-        {saleListings && saleListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-      </div> */}
+  <div className="bg-cover h-screen object-contain opacity-0.8"
+    style={{
+      backgroundImage: `url(${bgImg})`,
+    }}>
+    {/* top */}
+    <div className="relative top-0 h-full flex flex-col space-y-4 md:space-y-10 items-center bg-black opacity-90 xl:w-5/12 sm:w-3/4 -z-1">
+      <h1 className="mt-20 md:mt-32 text-white font-bold text-xl sm:text-3xl lg:text-4xl">
+        Find your next <span className="text-cyan-400">perfect</span>
+        <br />
+        travel partner
+      </h1>
+      <div className="text-white text-xs sm:text-base">
+        OnTheGo is the best place to find your next perfect partner to travel with.
       </div>
+      <Link
+        to={'/search'}
+        className="pt-2 sm:pt-4 text-base sm:text-lg text-cyan-400 font-extrabold hover:underline"
+      >
+        Click here to Search your Destination
+      </Link>
     </div>
+  </div>
+</div>
+
   );
 }
