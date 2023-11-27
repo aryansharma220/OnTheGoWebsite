@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp'
-import Header from './components/Header'
+import Header from './components/Header';
+import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './Pages/Profile';
 import CreateListing from './Pages/CreateListing';
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/create-listing' element={<CreateListing />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
